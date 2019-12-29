@@ -1,4 +1,4 @@
-import config from 'config';
+const apiUrl = process.env.API_URL || 'localhost:4000';
 
 export const waiterService = {
   login,
@@ -13,7 +13,7 @@ async function login(email, password) {
     body: JSON.stringify({ email, password }),
   };
 
-  return fetch(`${config.apiUrl}/api/v1/waiters/login`, requestOptions)
+  return fetch(`${apiUrl}/api/v1/waiters/login`, requestOptions)
     .then(handleResponse)
     .then(waiter => {
       // Store waiter details and jwt token in local storage to keep user
@@ -35,7 +35,7 @@ function register(waiter) {
     body: JSON.stringify(waiter),
   };
 
-  return fetch(`${config.apiUrl}/api/v1/waiters/register`, requestOptions)
+  return fetch(`localhost:4000/api/v1/waiters/register`, requestOptions)
     .then(handleResponse);
 }
 
