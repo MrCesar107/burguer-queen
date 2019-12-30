@@ -18,7 +18,7 @@ async function login(email, password) {
     .then(waiter => {
       // Store waiter details and jwt token in local storage to keep user
       // logged in between pages refreshes
-      localStorage.setItem('water', JSON.stringify(waiter));
+      localStorage.setItem('waiter', JSON.stringify(waiter));
       return waiter;
     });
 }

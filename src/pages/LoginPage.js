@@ -37,7 +37,7 @@ class LoginPage extends Component {
   }
 
   render() {
-    const { loggedIn } = this.props;
+    const { loggingIn } = this.props;
     const { email, password, submitted } = this.state;
 
     return(
@@ -61,7 +61,7 @@ class LoginPage extends Component {
                         onChange={this.handleChange} />
                       <label htmlFor="email">Email</label>
                       <span className="helper-text"
-                            data-error="Email is  required" />
+                            data-error="Email is  invalid" />
                     </div>
                     <div className="input-field">
                       <input
