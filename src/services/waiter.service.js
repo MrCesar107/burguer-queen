@@ -1,6 +1,6 @@
-const apiUrl = process.env.API_URL || 'localhost:4000';
+const apiUrl = process.env.API_URL || 'http://localhost:4000';
 
-export const waiterService = {
+export const waiterService   = {
   login,
   logout,
   register,
@@ -35,7 +35,7 @@ function register(waiter) {
     body: JSON.stringify(waiter),
   };
 
-  return fetch(`localhost:4000/api/v1/waiters/register`, requestOptions)
+  return fetch(`${apiUrl}/api/v1/waiters/register`, requestOptions)
     .then(handleResponse);
 }
 
