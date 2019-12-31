@@ -11,6 +11,11 @@ import * as serviceWorker from './serviceWorker';
 // Initialize materialize css
 M.AutoInit();
 
+// Sidenav initialization
+document.addEventListener('DOMContentLoaded', () => {
+  M.AutoInit();
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

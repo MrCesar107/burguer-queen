@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
-.App {
+.App, .app {
   width: 100%;
-  height: 100vh;
-  display: flex;
   background-color: #424242;
   font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  height: 100%;
+}
+
+.app {
+  height: 100vh;
 }
 
 .App--form-container {
@@ -33,6 +39,11 @@
   color: #4caf50;
 }
 
+.card-title {
+  color: #4caf50;
+  font-family: 'Roboto', sans-serif;
+}
+
 .Form--button {
   display: flex;
   margin: 0px auto;
@@ -46,4 +57,36 @@
 .Form--errors {
   color: #ff5252;
   font-size: 1rem;
+}
+
+.Navbar {
+  background-color: #388e3c;
+}
+
+.Navbar--brand {
+  color: #e0e0e0 !important;
+  font-weight: bolder;
+  font-family: 'Lobster', cursive;
+}
+
+.Navbar--menu-button{
+  height: inherit;
+  background-color: #388e3c !important;
+  color: #e0e0e0;
+  border: none;
+}
+
+.Navbar--menu-button:hover {
+  cursor: pointer;
+}
+
+.Menu {
+
+}
+
+.Menu--title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: 'Roboto', serif;
+  color: #eee;
 }

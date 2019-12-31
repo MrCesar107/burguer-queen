@@ -21,10 +21,10 @@ class App extends Component {
   }
 
   render() {
-    const { alert } = this.props;
+    const { alert } = this.props
 
     return(
-      <div className="App">
+      <div id="App">
         <Router history={history}>
           <Switch>
             <PrivateRoute exact path="/" component={HomePage} />

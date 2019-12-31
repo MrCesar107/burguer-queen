@@ -41,75 +41,77 @@ class LoginPage extends Component {
     const { email, password, submitted } = this.state;
 
     return(
-      <div className="App--form-container container">
-        <div className="row">
-          <div className="col s2" />
-          <div className="col s8">
-            <div className="Card card-panel">
-              <h1 className="Card--title">Burguer Queen</h1>
-              <h2 className="Card--subtitle">Log In</h2>
-              <div className="container Form">
-                <div className="row">
-                  <form className="col s12" onSubmit={this.handleSubmit}>
-                    <div className="input-field">
-                      <input
-                        name="email"
-                        id="email"
-                        type="email"
-                        value={email}
-                        className="validate"
-                        onChange={this.handleChange} />
-                      <label htmlFor="email">Email</label>
-                      <span className="helper-text"
-                            data-error="Email is  invalid" />
-                    </div>
-                    <div className="input-field">
-                      <input
-                        name="password"
-                        id="password"
-                        type="password"
-                        value={password}
-                        className="validate"
-                        onChange={this.handleChange} />
-                      <label htmlFor="password">Password</label>
-                      <span className="helper-text"
-                            data-error="Password is  required" />
-                    </div>
-                    <div className="row">
-                      <div className="col s6">
-                        <button
-                          className="btn waves-effect waves-light Form--button"
-                          type="submit"
-                          name="submit">
-                          Log in
-                          <i className="material-icons right">send</i>
-                        </button>
+      <div className="app valign-wrapper">
+        <div className="App--form-container container">
+          <div className="row">
+            <div className="col s2" />
+            <div className="col s8">
+              <div className="Card card-panel">
+                <h1 className="Card--title">Burguer Queen</h1>
+                <h2 className="Card--subtitle">Log In</h2>
+                <div className="container Form">
+                  <div className="row">
+                    <form className="col s12" onSubmit={this.handleSubmit}>
+                      <div className="input-field">
+                        <input
+                          name="email"
+                          id="email"
+                          type="email"
+                          value={email}
+                          className="validate"
+                          onChange={this.handleChange} />
+                        <label htmlFor="email">Email</label>
+                        <span className="helper-text"
+                              data-error="Email is  invalid" />
                       </div>
-                      <div className="col s6">
-                        <Link to='/register'>
+                      <div className="input-field">
+                        <input
+                          name="password"
+                          id="password"
+                          type="password"
+                          value={password}
+                          className="validate"
+                          onChange={this.handleChange} />
+                        <label htmlFor="password">Password</label>
+                        <span className="helper-text"
+                              data-error="Password is  required" />
+                      </div>
+                      <div className="row">
+                        <div className="col s6">
                           <button
                             className="btn waves-effect waves-light Form--button"
-                            type="button"
-                            name="register">
-                            Register
-                            <i className="material-icons right">person_add</i>
+                            type="submit"
+                            name="submit">
+                            Log in
+                            <i className="material-icons right">send</i>
                           </button>
-                        </Link>
+                        </div>
+                        <div className="col s6">
+                          <Link to='/register'>
+                            <button
+                              className="btn waves-effect waves-light Form--button"
+                              type="button"
+                              name="register">
+                              Register
+                              <i className="material-icons right">person_add</i>
+                            </button>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="col s12">
-                        <ul className="Form--errors">
-                          { submitted && !email &&
-                            <li>Email is required</li>
-                          }
-                          { submitted && !password &&
-                            <li>Password is required</li>
-                          }
-                        </ul>
+                      <div className="row">
+                        <div className="col s12">
+                          <ul className="Form--errors">
+                            { submitted && !email &&
+                              <li>Email is required</li>
+                            }
+                            { submitted && !password &&
+                              <li>Password is required</li>
+                            }
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

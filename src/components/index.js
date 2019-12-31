@@ -1,2 +1,3 @@
 export * from './PrivateRoute';
-export * from './Card';
+export * from './ItemCard';
+export * from './Navbar';
