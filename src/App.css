@@ -81,10 +81,19 @@
 }
 
 .Menu {
-
 }
 
 .Menu--title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: 'Roboto', serif;
+  color: #eee;
+}
+
+.Items {
+}
+
+.Items--title {
   font-size: 1.8rem;
   font-weight: bold;
   font-family: 'Roboto', serif;

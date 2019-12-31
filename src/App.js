@@ -8,7 +8,12 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 
 // Pages
-import { HomePage, LoginPage, RegisterPage, OrdersPage } from './pages';
+import { HomePage,
+         LoginPage,
+         RegisterPage,
+         OrdersPage,
+         ItemsPage,
+       } from './pages';
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +33,8 @@ class App extends Component {
         <Router history={history}>
           <Switch>
             <PrivateRoute exact path="/" component={HomePage} />
-            <PrivateRoute exact path="/orders" component={OrdersPage}/>
+            <PrivateRoute exact path="/orders" component={OrdersPage} />
+            <PrivateRoute exact path="/items" component={ItemsPage} />
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
             <Redirect from="*" to="/" />

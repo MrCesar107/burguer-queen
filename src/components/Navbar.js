@@ -5,7 +5,7 @@ import M from 'materialize-css';
 class Navbar extends Component {
   componentDidMount() {
       let elem = document.querySelector('.sidenav');
-      let instance = M.Sidenav.init(elem, {});
+      M.Sidenav.init(elem, {});
   }
 
   render() {
@@ -46,7 +46,7 @@ class Navbar extends Component {
           </li>
           <li>
             <Link to="/items"
-                  className="waves-effect sidenav-close">Items</Link>
+                  className="waves-effect sidenav-close">Products</Link>
           </li>
           <li><div className="divider"></div></li>
           <li>
