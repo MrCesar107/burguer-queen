@@ -1,4 +1,4 @@
-export default function authHeader() {
+export function authHeader() {
   // returns authorization header with a jwt token
   let waiter = JSON.parse(localStorage.getItem('waiter'));
 

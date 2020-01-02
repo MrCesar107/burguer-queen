@@ -6,8 +6,10 @@ export const ItemCard = (props) => (
       <img src="https://recipesfromapantry.com/wp-content/uploads/2020/11/air-fryer-hamburgers-16-2.jpg"/>
     </div>
     <div className="card-content">
-      <span className="card-title">{props.name}</span>
-      <p>{props.description}</p>
+      <span className="card-title">
+        {props.name}
+        <span className="right">${props.price}</span>
+      </span>
     </div>
   </div>
 );

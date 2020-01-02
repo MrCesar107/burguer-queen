@@ -1,5 +1,5 @@
 import { menuConstants } from '../constants';
-import { waiterService } from '../services';
+import { menuService } from '../services';
 import { alertActions } from './';
 import { history } from '../helpers';
 

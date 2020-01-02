@@ -42,6 +42,7 @@
 .card-title {
   color: #4caf50;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem !important;
 }
 
 .Form--button {
@@ -98,4 +99,12 @@
   font-weight: bold;
   font-family: 'Roboto', serif;
   color: #eee;
+}
+
+.Action-Button button {
+  background-color: #4caf50;
+}
+
+.Action-Button button:hover {
+  background-color: #388e3c;
 }
