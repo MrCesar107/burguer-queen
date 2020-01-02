@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { waiterActions } from '../actions';
 import M from 'materialize-css';
 
 class Navbar extends Component {
@@ -50,7 +51,9 @@ class Navbar extends Component {
           </li>
           <li><div className="divider"></div></li>
           <li>
-            <Link to="/logout" className="waves-effect sidenav-close">
+            <Link to="/logout"
+                  onClick={waiterActions.logout}
+                  className="waves-effect sidenav-close">
               Log out
             </Link>
           </li>

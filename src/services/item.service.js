@@ -1,5 +1,6 @@
 import { authHeader } from '../helpers';
-const apiUrl = process.env.API_URL || 'http://localhost:4000';
+const apiUrl = 'https://burguer-queen-api.herokuapp.com' 
+  || 'http://localhost:4000';
 
 
 export const itemService = {
