@@ -30,7 +30,7 @@ class Navbar extends Component {
             <div className="user-view">
               <div className="background">
                 <img
-                  src="https://www.recipetineats.com/wp-content/uploads/2016/02/Beef-Hamburgers_7-2-500x375.jpg" 
+                  src="https://www.recipetineats.com/wp-content/uploads/2016/02/Beef-Hamburgers_7-2-500x375.jpg"
                   alt="menu-background" />
               </div>
               <span className="white-text name">User name</span>
