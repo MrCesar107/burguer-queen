@@ -8,6 +8,10 @@ import { menuActions, itemActions } from '../actions';
 import Navbar from '../components/Navbar';
 import { ItemCard } from '../components';
 import { ActionButton } from '../components';
+<<<<<<< HEAD
+=======
+import { Chcekbox } from '../components';
+>>>>>>> 3a379659f02ea31b3facdfeb619d470806e95bcc
 
 class HomePage extends Component {
   constructor(props) {
@@ -17,12 +21,14 @@ class HomePage extends Component {
     this.state = {
       menu: {
         name: '',
-        items: [],
+        items: new Map,
       },
       submitted: false,
+      checkedItems: new Map,
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -33,16 +39,33 @@ class HomePage extends Component {
     M.Modal.init(elems, {});
   }
 
-  handleChange(e, optionID) {
-    const { name, value, checked } = e.target;
+  handleChange(e) {
+    const { name, value } = e.target;
     const { menu } = this.state;
 
     this.setState({
       menu: {
         ...menu,
-        [name]: value,
+        [name]: value
       }
     });
+  }
+
+  handleCheckboxChange(e) {
+    const { name, checked, value } = e.target;
+    const { menu } = this.state
+
+
+
+    this.setState(prevState => (
+      {
+        menu: {
+          ...menu,
+          items: prevState.menu.items.set(name, checked)
+        },
+        checkedItems: prevState.checkedItems.set(name, checked)
+      }
+    ));
   }
 
   handleSubmit(e) {
@@ -50,17 +73,32 @@ class HomePage extends Component {
 
     this.setState({ submitted: true });
     const { menu } = this.state
+    let menuItems = []
 
     if(menu.name && menu.items) {
+      menu.items.forEach((key, value) => {
+        key &&
+          menuItems.push({ id: value })
+      });
+
+      this.setState({
+        menu: {
+          items: menuItems
+        }
+      });
+
+      menu.items = menuItems
+
       this.props.createMenu(menu);
     }
 
     this.setState({
       menu: {
         name: '',
-        items: [],
+        items: new Map,
       },
       submitted: false,
+      checkedItems: new Map,
     });
   }
 
@@ -90,6 +128,7 @@ class HomePage extends Component {
                               return(
                                 <div className="col s12 m4">
                                   <ItemCard
+                                    key={item._id}
                                     name={item.name}
                                     price={item.price} />
                                 </div>
@@ -113,7 +152,7 @@ class HomePage extends Component {
               <div className="row">
                 <form className="col s12" onSubmit={this.handleSubmit}>
                   <div className="input-field">
-                    <input 
+                    <input
                       type="text"
                       id="name"
                       name="name"
@@ -127,15 +166,13 @@ class HomePage extends Component {
                         items.items &&
                           items.items.map((item) => {
                             return(
-                              <p>
-                                <label>
-                                  <input type="checkbox"
-                                         name="items"
-                                         value={item._id}
-                                         onChange={e => this.handleChange(e, item._id)} />
-                                  <span>{item.name}</span>
-                                </label>
-                              </p>
+                              <Chcekbox
+                                key={item._id}
+                                name={item._id}
+                                nameElement={item.name}
+                                value={item._id}
+                                checked={(this.state.checkedItems.get(item._id))}
+                                onChange={this.handleCheckboxChange} />
                             )
                           })
                       }
@@ -173,5 +210,3 @@ const actionCreators = {
 const connectedHomePage = connect(mapState, actionCreators)(HomePage);
 
 export { connectedHomePage as HomePage };
-
-

@@ -3,3 +3,4 @@ export * from './ItemCard';
 export * from './OrderCard';
 export * from './Navbar';
 export * from './ActionButton';
+export * from './Checkbox';
