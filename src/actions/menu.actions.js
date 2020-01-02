@@ -52,7 +52,7 @@ function updateMenu(menu) {
 
   function request(menu) { return { type: menuConstants.UPDATE_REQUEST, menu } }
   function success(menu) { return { type: menuConstants.UPDATE_SUCCESS, menu } }
-  function failure(error) { return { type: menuConstants.UPDATE_FAILURE, menu } }
+  function failure(error) { return { type: menuConstants.UPDATE_FAILURE, error } }
 }
 
 function deleteMenu(id) {

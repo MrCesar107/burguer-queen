@@ -8,10 +8,7 @@ import { menuActions, itemActions } from '../actions';
 import Navbar from '../components/Navbar';
 import { ItemCard } from '../components';
 import { ActionButton } from '../components';
-<<<<<<< HEAD
-=======
-import { Chcekbox } from '../components';
->>>>>>> 3a379659f02ea31b3facdfeb619d470806e95bcc
+import { Checkbox } from '../components';
 
 class HomePage extends Component {
   constructor(props) {
@@ -52,7 +49,7 @@ class HomePage extends Component {
   }
 
   handleCheckboxChange(e) {
-    const { name, checked, value } = e.target;
+    const { name, checked } = e.target;
     const { menu } = this.state
 
 
@@ -166,14 +163,14 @@ class HomePage extends Component {
                         items.items &&
                           items.items.map((item) => {
                             return(
-                              <Chcekbox
+                              <Checkbox
                                 key={item._id}
                                 name={item._id}
                                 nameElement={item.name}
                                 value={item._id}
                                 checked={(this.state.checkedItems.get(item._id))}
                                 onChange={this.handleCheckboxChange} />
-                            )
+                            );
                           })
                       }
                     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Chcekbox = ({ type = 'checkbox', name, value, checked = false, onChange, nameElement }) => (
+export const Checkbox = ({ type = 'checkbox', name, value, checked = false, onChange, nameElement }) => (
   <p>
     <label>
       <input type={type}
@@ -14,7 +14,7 @@ export const Chcekbox = ({ type = 'checkbox', name, value, checked = false, onCh
   </p>
 );
 
-Chcekbox.propTypes = {
+Checkbox.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
