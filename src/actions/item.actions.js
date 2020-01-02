@@ -40,18 +40,12 @@ function updateItem(item) {
       .then(
         item => {
           dispatch(success());
-          dispatch(alertActions.success('Item created'));
+          dispatch(alertActions.success('Item updated'));
         },
         error => {
           dispatch(failure(error.toString()));
           dispatch(alertActions.error(error.toString));
         }
-      );
-
-    itemService.getAll()
-      .then(
-        items => dispatch(success(items)),
-        error => dispatch(failure(error.toString())),
       );
   };
 

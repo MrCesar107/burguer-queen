@@ -2,10 +2,10 @@ import { authHeader } from '../helpers';
 const apiUrl = process.env.API_URL || 'http://localhost:4000';
 
 
-export const itemService = {
+export const menuService = {
   create,
   update,
-  deleteItem,
+  deleteMenu,
   getAll,
 };
 
@@ -19,39 +19,39 @@ function getAll() {
     headers: authHeader(),
   };
 
-  return fetch(`${apiUrl}/api/v1/items`, requestOptions)
+  return fetch(`${apiUrl}/api/v1/menus`, requestOptions)
     .then(handleResponse);
 }
 
-function create(item) {
+function create(menu) {
   const requestOptions = {
     method: 'POST',
     headers: { ...authHeader(), 'Content-Type': 'application/json' },
-    body: JSON.stringify(item),
+    body: JSON.stringify(menu),
   };
 
-  return fetch(`${apiUrl}/api/v1/items/create`, requestOptions)
+  return fetch(`${apiUrl}/api/v1/menus/create`, requestOptions)
     .then(handleResponse);
 }
 
-function update(item) {
+function update(menu) {
   const requestOptions = {
     method: 'PUT',
     headers: { ...authHeader(), 'Content-Type': 'application/json' },
-    body: JSON.stringify(item),
+    body: JSON.stringify(menu),
   };
 
-  return fetch(`${apiUrl}/api/v1/items/update/${item.id}`, requestOptions)
+  return fetch(`${apiUrl}/api/v1/menus/update/${menu.id}`, requestOptions)
     .then(handleResponse);
 }
 
-function deleteItem(id) {
+function deleteMenu(id) {
   const requestOptions = {
     method: 'DELETE',
     headers: authHeader(),
   };
 
-  return fetch(`${apiUrl}/api/v1/items/delete/${id}`, requestOptions)
+  return fetch(`${apiUrl}/api/v1/menus/delete/${id}`, requestOptions)
     .then(handleResponse);
 }
 
